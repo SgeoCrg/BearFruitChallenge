@@ -82,8 +82,13 @@ public class GameScene extends GeneralScene {
 
                 //Generate or move fruit
                 if (fruit == null) {
+                    int number;
+                    do {
+                        number = (int)(Math.random() * GeneralScene.GAME_WIDTH - Fruit.FRUIT_WIDTH);
+                    } while((number > bear.getX() - points/10 && number < bear.getX() + points/10) || number < 38);
                     fruit = new Fruit();
-                    fruit.moveTo((int)(Math.random() * (GeneralScene.GAME_WIDTH - Fruit.FRUIT_WIDTH)), 0);
+                    fruit.moveTo(number,0);
+                    //fruit.moveTo((int)(Math.random() * (GeneralScene.GAME_WIDTH - Fruit.FRUIT_WIDTH)), 0);
                 } else {
                     fruit.move();
                     if(fruit.collidesWith(bear)) {
