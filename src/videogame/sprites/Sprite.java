@@ -28,4 +28,9 @@ public class Sprite {
         gc.drawImage(spriteImage, spriteX, spriteY,
                 width, height, x, y, width, height);
     }
+
+    public boolean collidesWith(Sprite sp) {
+        return (x + width / 2 > sp.x && x < sp.x + sp.width / 2 &&
+                y + height / 2 > sp.y && y < sp.y + sp.height / 2);
+    }
 }

@@ -1,9 +1,10 @@
 package videogame.sprites;
 
 public class AnimatedSprite extends Sprite {
-    public static final int TOTAL_MOVEMENTS = 2;
+    public static final int TOTAL_MOVEMENTS = 3;
     public static final int RIGHT = 0;
     public static final int LEFT = 1;
+    public static final int CENTER = 2;
     public static final byte SPRITE_CHANGE = 5;
 
     protected int currentDirection;
@@ -15,7 +16,7 @@ public class AnimatedSprite extends Sprite {
 
     public AnimatedSprite(int width, int height) {
         super(width, height);
-        currentDirection = RIGHT;
+        currentDirection = CENTER;
         currentSprite = 0;
         currentSpriteChange = 0;
     }
